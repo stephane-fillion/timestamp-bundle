@@ -1,5 +1,5 @@
 services:
   timestamp_bundle.timestamp_subscriber:
-        class: TimestampBundle\EventSubscriber\TimestampableSubscriber
-        tags:
-        - { name: doctrine.event_subscriber }
+    class: TimestampBundle\EventSubscriber\TimestampableSubscriber
+    tags:
+      - { name: doctrine.event_subscriber }
