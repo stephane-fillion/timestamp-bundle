@@ -4,22 +4,16 @@ declare(strict_types=1);
 
 namespace TimestampBundle\EventSubscriber;
 
-use Doctrine\Common\EventSubscriber;
+use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\PrePersistEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
 use TimestampBundle\Attribute\Timestampable;
 
-class TimestampableSubscriber implements EventSubscriber
+#[AsDoctrineListener(event: Events::preUpdate, priority: 500, connection: 'default')]
+#[AsDoctrineListener(event: Events::prePersist, priority: 500, connection: 'default')]
+class TimestampableSubscriber
 {
-    public function getSubscribedEvents(): array
-    {
-        return [
-            Events::prePersist,
-            Events::preUpdate,
-        ];
-    }
-
     /**
      * Remplit automatiquement createdAt lors de la création d'une entité.
      */

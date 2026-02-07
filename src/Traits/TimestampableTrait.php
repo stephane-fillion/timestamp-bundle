@@ -8,7 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
 use TimestampBundle\Attribute\Timestampable;
 
-#[Timestampable]
 trait TimestampableTrait
 {
     #[ORM\Column(type: Types::DATE_IMMUTABLE, nullable: true)]

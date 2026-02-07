@@ -10,14 +10,5 @@ use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class TimestampBundle extends AbstractBundle
 {
-    public function getPath(): string
-    {
-        return \dirname(__DIR__);
-    }
 
-    public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
-    {
-        // load an XML, PHP or YAML file
-        $container->import('../config/services.yaml');
-    }
 }
