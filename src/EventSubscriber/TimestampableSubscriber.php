@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\EventListener;
+namespace TimestampBundle\EventSubscriber;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PrePersistEventArgs;
@@ -10,7 +10,7 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
 use TimestampBundle\Attribute\Timestampable;
 
-class TimestampListener implements EventSubscriber
+class TimestampableSubscriber implements EventSubscriber
 {
     public function getSubscribedEvents(): array
     {
