@@ -1,0 +1,30 @@
+{
+    "name": "stephane-fillion/timestamp-bundle",
+    "type": "symfony-bundle",
+    "description": "Un bundle Symfony pour la création d'un champ createdAt.",
+    "keywords": ["symfony", "bundle", "timestampable"],
+    "homepage": "https://github.com/stephane-fillion/timestamp-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stéphane Fillion",
+            "email": "fillion.stephane@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "symfony/framework-bundle": "^6.0|^7.0",
+        "doctrine/dbal": "*",
+        "doctrine/orm": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TimestampBundle\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0.x-dev"
+        }
+    }
+}
