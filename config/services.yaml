@@ -1,17 +1,6 @@
-# FIX: Ce fichier a été supprimé au commit 6d48319 ("Utilisation attribut")
-# Il était présent au commit 3e9f27a ("Chargement de la configuration")
-#
-# L'attribut #[AsDoctrineListener] permet de taguer automatiquement un service
-# MAIS il faut d'abord que la classe soit déclarée comme service Symfony.
-# 
-# Sans ce fichier, TimestampableSubscriber n'existe pas dans le conteneur DI,
-# donc Doctrine ne peut pas l'appeler sur prePersist/preUpdate.
-
 services:
     _defaults:
         autowire: true
         autoconfigure: true
 
-    # Enregistrer le subscriber comme service
-    # L'attribut #[AsDoctrineListener] s'occupera du tag doctrine.event_listener
     TimestampBundle\EventSubscriber\TimestampableSubscriber: ~
